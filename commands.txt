@@ -1,0 +1,13 @@
+Commandes de base :
+    !hello : Affiche un message de bienvenue
+    !txt : Affiche un message
+
+Commandes pour l'historique des commandes de l'utilisateur :
+    !history : Affiche l'historique des commandes
+    !first : Affiche la première commande
+    !last : Affiche la dernière commande
+    !clear_history : Supprime l'historique des commandes
+
+Commandes pour utiliser le bot musique :
+    !Play : Suivis de l'url de la vidéo Youtube, il permet de la lire dans un canal vocal
+    !Stop : Arrête la vidéo

@@ -1,0 +1,1 @@
+!clear_channel : Supprime les 1500 derniers messages du canal (utilisable seulement par les **Admins**)

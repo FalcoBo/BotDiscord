@@ -4,7 +4,8 @@ class List_CommandHistory:
     def __init__(self):
         self.first = None
         self.last = self.first
-        self.size = 1
+        self.size = 0
+        self.index = 0
 
     def append_command(self, command):
         current_node = Node_history(command)
@@ -14,7 +15,7 @@ class List_CommandHistory:
         else:
             self.last.next = current_node
             self.last = current_node
-        self.size += 1
+        self.index += 1
 
     def get_first_command(self):
         return self.first.command
@@ -41,7 +42,17 @@ class List_CommandHistory:
             return "Aucune commande enregistrée"
         return self.size
 
+    def get_index_command(self, index):
+        self.index = self.first
+        for i in range(index):
+            if index > self.size:
+                self.index = self.first
+            else :
+                self.index = self.index.next
+        return self.index.command
+
     def clear_history(self):
         self.first = None
         self.last = None
-        self.size = 1
+        self.index = 0
+        self.size = 0

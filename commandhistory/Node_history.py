@@ -3,4 +3,5 @@ class Node_history:
         self.command = command
         self.next = None
         self.last = None
-        self.size = 1
+        self.size = 0
+        self.index = 0

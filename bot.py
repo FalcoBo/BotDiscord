@@ -2,7 +2,6 @@ import discord
 from discord.ext import commands
 from commandhistory.List_CommandHistory import List_CommandHistory
 from Data.functions_bot import load_command_history, save_command_history
-import asyncio
 import youtube_dl
 
 TOKEN = ""
@@ -10,7 +9,7 @@ TOKEN = ""
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
 list_history = List_CommandHistory()
-command_history_locks = {}
+# command_history_locks = {} Dictionnaire pour gérer les locks sur les commandes avec la hashmap
 data_history = load_command_history()
 
 # Démarrage du bot
@@ -159,12 +158,9 @@ async def on_command_completion(ctx):
     if user_name not in data_history[server_name]:
         data_history[server_name][user_name] = []
 
-    if server_name not in command_history_locks:
-        command_history_locks[server_name] = asyncio.Lock()
-
-    async with command_history_locks[server_name]:
-        data_history[server_name][user_name].append(command)
-        save_command_history(data_history)
+    # async with command_history_locks[server_name]:
+    data_history[server_name][user_name].append(command)
+    save_command_history(data_history)
 
 # Commandes pour l'historique des commandes
 # Première commande
@@ -190,8 +186,16 @@ async def last(ctx):
 # Supprimer l'historique des commandes
 @bot.command(name="clear_history")
 async def clear_history(ctx):
-    list_history.clear_history()
-    await ctx.channel.send("```L'historique des commandes a été supprimé !```")
+    server_name = ctx.guild.name
+    user_name = ctx.author.name
+
+    if server_name in data_history and user_name in data_history[server_name]:
+        del data_history[server_name][user_name]
+        save_command_history(data_history)
+        await ctx.channel.send("```L'historique des commandes a été supprimé !```")
+    else:
+        await ctx.channel.send("```Aucun historique de commandes trouvé pour cet utilisateur dans ce serveur.```")
+
 
 # Commande pour lire des vidéos youtube dans un channel vocal
 @bot.command(name="play")

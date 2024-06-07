@@ -1,13 +1,14 @@
-Commandes de base :
-    !hello : Affiche un message de bienvenue
-    !txt : Affiche un message
+Basic :
+    !clear :                Efface les 5 derniers messages
+    !mystery_kick :         Kick une personne au hasard présente de le channel vocal
+    !mystery_ban :          Ban 60s une personne au hasard présente dans le channel vocal
 
-Commandes pour l'historique des commandes de l'utilisateur :
-    !history : Affiche l'historique des commandes
-    !first : Affiche la première commande
-    !last : Affiche la dernière commande
-    !clear_history : Supprime l'historique des commandes
+Valorant :
+    !mystery_pick :         Choisi un agent Valo au hasard
+    !mystery_gun :          Choisi une arme Valo au hasard
 
-Commandes pour utiliser le bot musique :
-    !Play : Suivis de l'url de la vidéo Youtube, il permet de la lire dans un canal vocal
-    !Stop : Arrête la vidéo
+History :
+    !history :              Affiche l'historique des commandes
+    !first :                Affiche la première commande
+    !last :                 Affiche la dernière commande
+    !clear_history :        Supprime l'historique des commandes

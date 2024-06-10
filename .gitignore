@@ -1,0 +1,50 @@
+# Environnements virtuels
+venv/
+ENV/
+env/
+
+# Fichiers spécifiques à l'éditeur
+.vscode/
+.idea/
+*.swp
+
+# Fichiers de configuration du système
+.DS_Store
+Thumbs.db
+
+# Compiled source code
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Dossiers de logs
+logs/
+*.log
+
+# Dépendances installées
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+pip-wheel-metadata/
+*.egg-info/
+.installed.cfg
+*.egg-info/
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Fichiers spécifiques à Jupyter Notebook
+.ipynb_checkpoints/
